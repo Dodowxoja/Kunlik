@@ -3,14 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kunlik/view/splash/cubit/splash_cubit.dart';
 import 'package:kunlik/view/splash/state/splash_state.dart';
 
-class SplashView extends StatefulWidget {
+class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
 
-  @override
-  State<SplashView> createState() => _SplashViewState();
-}
-
-class _SplashViewState extends State<SplashView> {
   // @override
   // void initState() {
   //   super.initState();

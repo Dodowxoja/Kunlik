@@ -3,7 +3,7 @@ import 'package:kunlik/view/auth/number/number_view.dart';
 import 'package:kunlik/view/auth/password/forgot_password_view.dart';
 import 'package:kunlik/view/auth/password/reset_password_view.dart';
 import 'package:kunlik/view/auth/register/register_view.dart';
-import 'package:kunlik/view/auth/sign_in/sign_in_view.dart';
+import 'package:kunlik/view/auth/sign_in/view/sign_in_view.dart';
 import 'package:kunlik/view/screens/cart/pages/cancelation_reason/cancelation_reason_page.dart';
 import 'package:kunlik/view/screens/cart/pages/history/history_page.dart';
 import 'package:kunlik/view/screens/cart/pages/my_blog/my_blog_page.dart';
@@ -30,7 +30,7 @@ import 'package:kunlik/view/screens/profile/pages/notification_settings/notifica
 import 'package:kunlik/view/screens/profile/pages/payment_method/payment_method_page.dart';
 import 'package:kunlik/view/screens/profile/pages/search_result_empty/search_result_empty_page.dart';
 import 'package:kunlik/view/screens/view/screens_view.dart';
-import 'package:kunlik/view/splash/splash_view.dart';
+import 'package:kunlik/view/splash/view/splash_view.dart';
 
 class MyRoutes {
   static final MyRoutes _instanse = MyRoutes.init();

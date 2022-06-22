@@ -8,7 +8,7 @@ class SplashLoding extends SplashState {}
 
 class SplashComplete extends SplashState {
   nextPage(BuildContext context) =>
-      Navigator.pushReplacementNamed(context, '/sign_in');
+    Navigator.pushNamedAndRemoveUntil(context, '/sign_in', (route) => false);
 }
 
 class SplashError extends SplashState {}
