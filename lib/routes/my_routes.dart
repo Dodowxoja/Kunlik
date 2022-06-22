@@ -29,7 +29,7 @@ import 'package:kunlik/view/screens/profile/pages/notification/notification_page
 import 'package:kunlik/view/screens/profile/pages/notification_settings/notification_settings_page.dart';
 import 'package:kunlik/view/screens/profile/pages/payment_method/payment_method_page.dart';
 import 'package:kunlik/view/screens/profile/pages/search_result_empty/search_result_empty_page.dart';
-import 'package:kunlik/view/screens/screens_view.dart';
+import 'package:kunlik/view/screens/view/screens_view.dart';
 import 'package:kunlik/view/splash/splash_view.dart';
 
 class MyRoutes {

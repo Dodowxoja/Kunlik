@@ -1,9 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:kunlik/models/kunlik_model.dart';
 import 'package:kunlik/service/api_date.dart';
 import 'routes/my_routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 8080);
+  await FirebaseStorage.instance.useStorageEmulator('localhost', 8080);
   runApp(const MyApp());
 }
 
