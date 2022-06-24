@@ -40,6 +40,7 @@ dependencies:
   flutter_firebase_auth: ^0.0.1
   firebase_core: ^1.18.0
   flutter_bloc: ^8.0.1
+  cloud_firestore: ^3.1.18
 
 dev_dependencies:
   flutter_test:
@@ -65,18 +66,20 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/flags/
     - assets/images/
-    - assets/images/Fruits/
     - assets/images/Meats/
+    - assets/images/Fruits/
     - assets/images/Vegetables/
     - assets/icons/
+    - assets/icons/flags/
     - assets/icons/cards/
+    - assets/icons/tabBar/
     - assets/icons/hearts/
+    - assets/icons/profile/
+    - assets/icons/vegetables/
     - assets/icons/notificationview/
     - assets/icons/orderStatusReceivedview/
-    - assets/icons/profile/
-    - assets/icons/tabBar/
-    - assets/icons/vegetables/
 
   #   - images/a_dot_ham.jpeg
 

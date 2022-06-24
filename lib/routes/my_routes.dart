@@ -4,6 +4,8 @@ import 'package:kunlik/view/auth/password/forgot_password_view.dart';
 import 'package:kunlik/view/auth/password/reset_password_view.dart';
 import 'package:kunlik/view/auth/register/register_view.dart';
 import 'package:kunlik/view/auth/sign_in/view/sign_in_view.dart';
+import 'package:kunlik/view/auth/view/admin_page.dart';
+import 'package:kunlik/view/auth/view/users_page.dart';
 import 'package:kunlik/view/screens/cart/pages/cancelation_reason/cancelation_reason_page.dart';
 import 'package:kunlik/view/screens/cart/pages/history/history_page.dart';
 import 'package:kunlik/view/screens/cart/pages/my_blog/my_blog_page.dart';
@@ -40,13 +42,24 @@ class MyRoutes {
   Route? onGenerate(RouteSettings s) {
     var args = s.arguments;
     switch (s.name) {
+      //admin
+      case '/admin':
+        return MaterialPageRoute(
+          builder: (_) => AdminPage(email: args as String),
+        );
+
+      //user
+      case '/users':
+        return MaterialPageRoute(
+          builder: (_) => UsersPage(email: args as String),
+        );
       //Splash Page
       case '/splash':
         return MaterialPageRoute(builder: (_) => const SplashView());
 
       //Auth Page
       case '/sign_in':
-        return MaterialPageRoute(builder: (_) => const SignInView());
+        return MaterialPageRoute(builder: (_) => SignInView());
       case '/register':
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case '/forgot_password':

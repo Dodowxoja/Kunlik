@@ -6,6 +6,10 @@ class SignInInitial extends SignInState {}
 
 class SignInLoding extends SignInState {}
 
-class SignInComplete extends SignInState {}
+class SignInComplete extends SignInState {
+  String? flagName;
+
+  SignInComplete({required this.flagName,});
+}
 
 class SignInError extends SignInState {}
