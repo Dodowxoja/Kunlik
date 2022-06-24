@@ -34,15 +34,14 @@ func addTodo(context *gin.Context) {
 }
 
 func main() {
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Paprika",Img: "paprika"}})
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Broccoli",Img: "broccoli"}})
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Lettuce",Img: "lettuce"}})
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Potato",Img: "potato"}})
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Carrot",Img: "carrot"}})
-	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Red Onion",Img: "red_onion"}})
-	api = append(api, Author{Category: "Fruits", Name: &Comment{Type: "Banan",Img: "banan"}})
-	api = append(api, Author{Category: "Meats", Name: &Comment{Type: "Qo'y Go'shti",Img: "qoy_goshti"}})
-
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Paprika", Img: "paprika"}})
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Broccoli", Img: "broccoli"}})
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Lettuce", Img: "lettuce"}})
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Potato", Img: "potato"}})
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Carrot", Img: "carrot"}})
+	api = append(api, Author{Category: "Vegetables", Name: &Comment{Type: "Red Onion", Img: "red_onion"}})
+	api = append(api, Author{Category: "Fruits", Name: &Comment{Type: "Banan", Img: "banan"}})
+	api = append(api, Author{Category: "Meats", Name: &Comment{Type: "Qo'y Go'shti", Img: "qoy_goshti"}})
 
 	router := gin.Default()
 	router.GET("/api/", getTodos)

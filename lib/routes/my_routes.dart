@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kunlik/view/auth/forgot_password/reset_password_view.dart';
 import 'package:kunlik/view/auth/number/number_view.dart';
-import 'package:kunlik/view/auth/password/forgot_password_view.dart';
-import 'package:kunlik/view/auth/password/reset_password_view.dart';
+import 'package:kunlik/view/auth/forgot_password/forgot_password_view.dart';
 import 'package:kunlik/view/auth/register/register_view.dart';
 import 'package:kunlik/view/auth/sign_in/view/sign_in_view.dart';
 import 'package:kunlik/view/auth/view/admin_page.dart';
@@ -47,12 +47,12 @@ class MyRoutes {
         return MaterialPageRoute(
           builder: (_) => AdminPage(email: args as String),
         );
-
       //user
       case '/users':
         return MaterialPageRoute(
           builder: (_) => UsersPage(email: args as String),
         );
+
       //Splash Page
       case '/splash':
         return MaterialPageRoute(builder: (_) => const SplashView());
