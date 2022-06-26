@@ -1,13 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kunlik/models/kunlik_model.dart';
+import 'package:kunlik/models/api_model.dart';
 import 'package:kunlik/service/api/api_date.dart';
 import 'package:kunlik/view/auth/view/auth_view.dart';
+import 'package:kunlik/view/test/my_home_page.dart';
 import 'routes/my_routes.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       // home: const LoginPage(),
       // home: const MyWidget(),
+      // home: MyHomePage(),
     );
   }
 }

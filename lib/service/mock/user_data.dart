@@ -7,4 +7,15 @@ class UserData {
       "password": "123456",
     },
   ];
+
+  a() {
+    phoneNumber.setAll(phoneNumber.length, [
+      {
+        "id": "${phoneNumber.length}",
+        "userName": "Muhammadxo'ja",
+        "number": "+998987073171",
+        "password": "123456",
+      }
+    ]);
+  }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kunlik/view/auth/forgot_password/reset_password_view.dart';
 import 'package:kunlik/view/auth/number/number_view.dart';
 import 'package:kunlik/view/auth/forgot_password/forgot_password_view.dart';
-import 'package:kunlik/view/auth/register/register_view.dart';
+import 'package:kunlik/view/auth/register/view/register_view.dart';
 import 'package:kunlik/view/auth/sign_in/view/sign_in_view.dart';
 import 'package:kunlik/view/auth/view/admin_page.dart';
 import 'package:kunlik/view/auth/view/users_page.dart';
@@ -61,11 +61,11 @@ class MyRoutes {
       case '/sign_in':
         return MaterialPageRoute(builder: (_) => SignInView());
       case '/register':
-        return MaterialPageRoute(builder: (_) => const RegisterView());
+        return MaterialPageRoute(builder: (_) => RegisterView());
       case '/forgot_password':
-        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
+        return MaterialPageRoute(builder: (_) => ForgotPasswordView());
       case '/reset_password':
-        return MaterialPageRoute(builder: (_) => const ResetPasswordView());
+        return MaterialPageRoute(builder: (_) => ResetPasswordView());
       case '/number':
         return MaterialPageRoute(builder: (_) => const NumberView());
 

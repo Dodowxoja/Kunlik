@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kunlik/core/components/my_flag.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kunlik/core/components/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 import 'package:kunlik/core/functions/sign_in_func.dart';
@@ -9,14 +9,21 @@ import 'package:kunlik/core/widgets/my_text_form_fild_widget.dart';
 import 'package:kunlik/service/mock/user_data.dart';
 import 'package:kunlik/view/auth/sign_in/cubit/signin_cubit.dart';
 
-class SignInView extends StatelessWidget {
+class SignInView extends StatefulWidget {
   SignInView({Key? key}) : super(key: key);
-  TextEditingController controllerPhoneCode = TextEditingController();
-  TextEditingController controllerPhoneNumber = TextEditingController();
-  TextEditingController controllerPassword = TextEditingController();
-  var data = UserData.phoneNumber;
 
-  String? number;
+  @override
+  State<SignInView> createState() => _SignInViewState();
+}
+
+class _SignInViewState extends State<SignInView> {
+  TextEditingController controllerPhoneCode = TextEditingController();
+
+  TextEditingController controllerPhoneNumber = TextEditingController();
+
+  TextEditingController controllerPassword = TextEditingController();
+
+  var data = UserData.phoneNumber;
 
   String? signIntext2 =
       'Welcome to Organico Mobile Apps. Please fill in the field below to sign in.';
@@ -29,6 +36,8 @@ class SignInView extends StatelessWidget {
         body: BlocConsumer<SignInCubit, SignInState>(
           listener: (context, state) {},
           builder: (context, state) {
+            bool scureText = context.watch<SignInCubit>().obscure;
+
             return SingleChildScrollView(
               child: SizedBox(
                 height: MediaQuery.of(context).size.height,
@@ -45,6 +54,7 @@ class SignInView extends StatelessWidget {
                       MyTextFormFildWidget(
                         controllerPhoneCode: controllerPhoneCode,
                         controllerPhoneNumber: controllerPhoneNumber,
+                        cubit: context.watch<SignInCubit>(),
                       ),
                       //Password
                       Container(
@@ -59,7 +69,23 @@ class SignInView extends StatelessWidget {
                         ),
                         child: TextFormField(
                           controller: controllerPassword,
+                          obscureText: scureText,
                           decoration: InputDecoration(
+                            prefixIcon: SizedBox(
+                              child: IconButton(
+                                icon: SvgPicture.asset('assets/icons/lock.svg'),
+                                onPressed: () {},
+                              ),
+                            ),
+                            suffixIcon: IconButton(
+                              icon:
+                                  SvgPicture.asset('assets/icons/eye_min.svg'),
+                              onPressed: () {
+                                context
+                                    .read<SignInCubit>()
+                                    .securityPass(!scureText);
+                              },
+                            ),
                             border: OutlineInputBorder(
                               borderSide: BorderSide.none,
                               borderRadius: BorderRadius.circular(100),
@@ -85,6 +111,7 @@ class SignInView extends StatelessWidget {
                           },
                         ),
                       ),
+                      //Register
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(

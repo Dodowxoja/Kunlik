@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kunlik/core/components/my_flag.dart';
+import 'package:kunlik/core/components/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 import 'package:kunlik/view/auth/sign_in/cubit/signin_cubit.dart';
 
 class MyTextFormFildWidget extends StatelessWidget {
   final TextEditingController controllerPhoneCode;
   final TextEditingController controllerPhoneNumber;
+  final cubit;
 
   const MyTextFormFildWidget({
     required this.controllerPhoneCode,
     required this.controllerPhoneNumber,
+    required this.cubit,
     Key? key,
   }) : super(key: key);
 
@@ -38,9 +41,9 @@ class MyTextFormFildWidget extends StatelessWidget {
                 controller: controllerPhoneCode,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.zero,
-                  icon: context.watch<SignInCubit>().flag == 'null'
+                  icon: cubit.flag == 'null'
                       ? const Icon(Icons.flag, size: 16)
-                      : MyFlag.flag(context.watch<SignInCubit>().flag),
+                      : MyFlag.flag(cubit.flag),
                   border: const OutlineInputBorder(
                     borderSide: BorderSide.none,
                   ),
@@ -70,7 +73,7 @@ class MyTextFormFildWidget extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

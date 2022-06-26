@@ -4,6 +4,7 @@ class ColorsConst {
   static Color colorTransparent = Colors.transparent;
   static Color colorWhitee = const Color(0xffFFFFFF);
   static Color colorBlack = const Color(0xff000000);
+  static Color color171725 = const Color(0xff171725);
   static Color color92929D = const Color(0xff92929D);
   static Color color2ECC71 = const Color(0xff2ECC71);
   static Color colorAA0023 = const Color(0xffAA0023);

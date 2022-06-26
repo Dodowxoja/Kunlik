@@ -8,8 +8,9 @@ class SignInLoding extends SignInState {}
 
 class SignInComplete extends SignInState {
   String? flagName;
+  bool? obscureText;
 
-  SignInComplete({required this.flagName,});
+  SignInComplete({this.flagName, this.obscureText});
 }
 
 class SignInError extends SignInState {}
