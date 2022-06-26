@@ -67,7 +67,7 @@ class MyRoutes {
       case '/reset_password':
         return MaterialPageRoute(builder: (_) => ResetPasswordView());
       case '/number':
-        return MaterialPageRoute(builder: (_) => const NumberView());
+        return MaterialPageRoute(builder: (_) => NumberView());
 
       //Screens (TabBar) Page
       case '/screens':

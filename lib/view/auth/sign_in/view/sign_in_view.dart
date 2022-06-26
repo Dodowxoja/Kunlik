@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kunlik/core/components/my_text_style_comp.dart';
+import 'package:kunlik/core/components/buttons/next_button_page_comp.dart';
+import 'package:kunlik/core/components/texts/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 import 'package:kunlik/core/functions/sign_in_func.dart';
 import 'package:kunlik/core/widgets/my_text_form_fild_widget.dart';
@@ -25,7 +26,7 @@ class _SignInViewState extends State<SignInView> {
 
   var data = UserData.phoneNumber;
 
-  String? signIntext2 =
+  String signIntext2 =
       'Welcome to Organico Mobile Apps. Please fill in the field below to sign in.';
 
   @override
@@ -48,8 +49,22 @@ class _SignInViewState extends State<SignInView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(child: Image.asset('assets/images/sign_in.png')),
-                      const Text('Welcome'),
-                      Text(signIntext2!),
+                      Text(
+                        'Welcome',
+                        style: MyTextStyleComp.myTextStyle(
+                          color: ColorsConst.color171725,
+                          fontSize: 20,
+                          weight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        signIntext2,
+                        style: MyTextStyleComp.myTextStyle(
+                          color: ColorsConst.color92929D,
+                          fontSize: 16,
+                          weight: FontWeight.w400,
+                        ),
+                      ),
                       //PHONE NUMBER
                       MyTextFormFildWidget(
                         controllerPhoneCode: controllerPhoneCode,

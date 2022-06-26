@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kunlik/core/components/my_app_bar_auth_comp.dart';
-import 'package:kunlik/core/components/my_text_style_comp.dart';
+import 'package:kunlik/core/components/appbar/my_app_bar_auth_comp.dart';
+import 'package:kunlik/core/components/texts/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 import 'package:kunlik/view/auth/register/cubit/register_cubit.dart';
 
@@ -24,51 +24,67 @@ class ResetPasswordView extends StatelessWidget {
           builder: (context, state) {
             bool sec1 = context.watch<RegisterCubit>().sec1;
             bool sec2 = context.watch<RegisterCubit>().sec2;
-            return Column(
-              children: [
-                const Text(
-                    'Please fill in the field below to reset your current password.'),
-                myTextFormFildName('New Password'),
-                passwordTextFormFild(
-                  context,
-                  'New Password',
-                  controlPass,
-                  sec1,
-                  context.read<RegisterCubit>().secPass1,
-                ),
-                myTextFormFildName('New Password Confirmation'),
-                passwordTextFormFild(
-                  context,
-                  'New Password Confirmation',
-                  controlPassConfirm,
-                  sec2,
-                  context.read<RegisterCubit>().secPass2,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: ColorsConst.colorAA0023,
-                    fixedSize: Size(
-                      MediaQuery.of(context).size.width,
-                      52,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                  ),
-                  child: Text(
-                    'Reset password',
+            return Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  Text(
+                    'Please fill in the field below to reset your current password.',
                     style: MyTextStyleComp.myTextStyle(
-                      color: ColorsConst.colorWhitee,
-                      weight: FontWeight.w500,
+                      color: ColorsConst.color92929D,
                       fontSize: 16,
+                      weight: FontWeight.w400,
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, '/screens', (route) => false);
-                  },
-                ),
-              ],
+                  const SizedBox(height: 48),
+                  myTextFormFildName('New Password'),
+                  const SizedBox(height: 10),
+                  passwordTextFormFild(
+                    context,
+                    'New Password',
+                    controlPass,
+                    sec1,
+                    context.read<RegisterCubit>().secPass1,
+                  ),
+                  const SizedBox(height: 16),
+                  myTextFormFildName('New Password Confirmation'),
+                  const SizedBox(height: 10),
+                  passwordTextFormFild(
+                    context,
+                    'New Password Confirmation',
+                    controlPassConfirm,
+                    sec2,
+                    context.read<RegisterCubit>().secPass2,
+                  ),
+                  const SizedBox(height: 48),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: ColorsConst.colorAA0023,
+                      fixedSize: Size(
+                        MediaQuery.of(context).size.width,
+                        52,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    ),
+                    child: Text(
+                      'Reset password',
+                      style: MyTextStyleComp.myTextStyle(
+                        color: ColorsConst.colorWhitee,
+                        weight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/screens', (route) => false);
+                    },
+                  ),
+                ],
+              ),
             );
           },
         ),

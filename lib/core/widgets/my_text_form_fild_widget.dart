@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kunlik/core/components/my_flag.dart';
-import 'package:kunlik/core/components/my_text_style_comp.dart';
+import 'package:kunlik/core/components/texts/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 import 'package:kunlik/view/auth/sign_in/cubit/signin_cubit.dart';
 

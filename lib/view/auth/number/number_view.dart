@@ -1,42 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:kunlik/core/components/my_app_bar_auth_comp.dart';
+import 'package:kunlik/core/components/appbar/my_app_bar_auth_comp.dart';
+import 'package:kunlik/core/components/buttons/next_button_page_comp.dart';
+import 'package:kunlik/core/components/texts/my_text_fild_comp.dart';
+import 'package:kunlik/core/components/texts/my_text_style_comp.dart';
 import 'package:kunlik/core/constants/colors_const.dart';
 
 class NumberView extends StatelessWidget {
-  const NumberView({Key? key}) : super(key: key);
+  NumberView({Key? key}) : super(key: key);
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBarAuthComp.myAppBarAuth(context, 'OTAC Number'),
-      body: Column(
-        children: [
-          const Text('Enter Authorization Code'),
-          const Text('We have sent SMS to:'),
-          const Text('+1 (XXX) XXX-X120'),
-          TextFormField(
-            controller: TextEditingController(),
-          ),
-          Align(
-            child: TextButton(
-              child: const Text('Resend Code'),
-              onPressed: () {},
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Text(
+              'Enter Authorization Code',
+              style: MyTextStyleComp.myTextStyle(
+                  fontSize: 20,
+                  color: ColorsConst.color171725,
+                  weight: FontWeight.w500),
             ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: ColorsConst.colorAA0023,
-              fixedSize: Size(MediaQuery.of(context).size.width, 52),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+            const SizedBox(height: 16),
+            Text(
+              'We have sent SMS to:',
+              style: MyTextStyleComp.myTextStyle(
+                  fontSize: 16,
+                  color: ColorsConst.color92929D,
+                  weight: FontWeight.w400),
+            ),
+            Text(
+              '+1 (XXX) XXX-X120',
+              style: MyTextStyleComp.myTextStyle(
+                color: ColorsConst.color171725,
+                fontSize: 18,
+                weight: FontWeight.w500,
               ),
             ),
-            child: const Text('Next'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/reset_password');
-            },
-          ),
-        ],
+            const SizedBox(height: 40),
+            MyTextFildComp.myTextFild(controller),
+            const SizedBox(height: 24),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                child: Text(
+                  'Resend Code',
+                  style: MyTextStyleComp.myTextStyle(
+                      color: ColorsConst.color2ECC71, weight: FontWeight.w600),
+                ),
+                onPressed: () {},
+              ),
+            ),
+            const SizedBox(height: 40),
+            NextButtonPageComp.nextButtonPage(context, 'Next', 'reset_password')
+          ],
+        ),
       ),
     );
   }
