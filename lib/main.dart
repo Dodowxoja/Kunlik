@@ -1,14 +1,17 @@
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kunlik/models/api_model.dart';
-import 'package:kunlik/service/api/api_date.dart';
-import 'package:kunlik/view/auth/view/auth_view.dart';
-import 'package:kunlik/view/test/my_home_page.dart';
+import 'package:get_storage/get_storage.dart';
+// import 'package:kunlik/models/api_model.dart';
+// import 'package:kunlik/service/api/api_date.dart';
+// import 'package:kunlik/service/mock/get_storage_service.dart';
+// import 'package:kunlik/view/auth/view/auth_view.dart';
+// import 'package:kunlik/view/test/my_home_page.dart';
 import 'routes/my_routes.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

@@ -117,7 +117,7 @@ class RegisterView extends StatelessWidget {
                       //Sign Up whit Google
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: ColorsConst.colorWhitee,
+                          primary: ColorsConst.colorWhite,
                           fixedSize: Size(
                             MediaQuery.of(context).size.width,
                             52,
@@ -150,6 +150,4 @@ class RegisterView extends StatelessWidget {
       ),
     );
   }
-
-  
 }

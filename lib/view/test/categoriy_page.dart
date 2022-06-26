@@ -3,7 +3,7 @@ import 'package:kunlik/models/api_model.dart';
 import 'package:kunlik/service/api/api_date.dart';
 
 class CategPage extends StatelessWidget {
-  final List<ApiModels> name; //!
+  final List<ApiModel> name; //!
 
   const CategPage({required this.name, Key? key}) : super(key: key);
   @override
@@ -20,7 +20,7 @@ class CategPage extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: ApiService.getData(),
-        builder: (context, AsyncSnapshot<List<ApiModels>> snap) {
+        builder: (context, AsyncSnapshot<List<ApiModel>> snap) {
           if (!snap.hasData) {
             return const Center(child: CircularProgressIndicator.adaptive());
           } else if (snap.hasError) {
@@ -33,7 +33,7 @@ class CategPage extends StatelessWidget {
     );
   }
 
-  Center grid1(List<ApiModels> data) {
+  Center grid1(List<ApiModel> data) {
     return Center(
       child: SizedBox(
         child: GridView.builder(

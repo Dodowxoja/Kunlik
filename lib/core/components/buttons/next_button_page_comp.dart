@@ -13,7 +13,7 @@ class NextButtonPageComp {
       child: Text(
         '$name',
         style: MyTextStyleComp.myTextStyle(
-          color: ColorsConst.colorWhitee,
+          color: ColorsConst.colorWhite,
           weight: FontWeight.w500,
           fontSize: 16,
         ),

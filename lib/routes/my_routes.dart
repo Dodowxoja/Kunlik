@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kunlik/models/api_model.dart';
 import 'package:kunlik/view/auth/forgot_password/reset_password_view.dart';
 import 'package:kunlik/view/auth/number/number_view.dart';
 import 'package:kunlik/view/auth/forgot_password/forgot_password_view.dart';
@@ -8,7 +9,7 @@ import 'package:kunlik/view/auth/view/admin_page.dart';
 import 'package:kunlik/view/auth/view/users_page.dart';
 import 'package:kunlik/view/screens/cart/pages/cancelation_reason/cancelation_reason_page.dart';
 import 'package:kunlik/view/screens/cart/pages/history/history_page.dart';
-import 'package:kunlik/view/screens/cart/pages/my_blog/my_blog_page.dart';
+import 'package:kunlik/view/screens/cart/pages/history/my_blog/my_blog_page.dart';
 import 'package:kunlik/view/screens/cart/pages/my_orders/my_orders_page.dart';
 import 'package:kunlik/view/screens/cart/pages/ongoing/ongoing_page.dart';
 import 'package:kunlik/view/screens/cart/pages/order_status/order_status_page.dart';
@@ -31,7 +32,7 @@ import 'package:kunlik/view/screens/profile/pages/notification/notification_page
 import 'package:kunlik/view/screens/profile/pages/notification_settings/notification_settings_page.dart';
 import 'package:kunlik/view/screens/profile/pages/payment_method/payment_method_page.dart';
 import 'package:kunlik/view/screens/profile/pages/search_result_empty/search_result_empty_page.dart';
-import 'package:kunlik/view/screens/view/screens_view.dart';
+import 'package:kunlik/view/screens/screens_view.dart';
 import 'package:kunlik/view/splash/view/splash_view.dart';
 
 class MyRoutes {
@@ -75,9 +76,15 @@ class MyRoutes {
 
       //Home Page
       case '/detail':
-        return MaterialPageRoute(builder: (_) => const DetailPage());
+        return MaterialPageRoute(
+          builder: (_) => DetailPage(
+            getData: args as ApiModel,
+            index: args as int,
+          ),
+        );
       case '/my_wishlist':
-        return MaterialPageRoute(builder: (_) => const MyWishlistPage());
+        return MaterialPageRoute(
+            builder: (_) => MyWishlistPage(getData: args as ApiModel));
       case '/vegetables':
         return MaterialPageRoute(builder: (_) => const VegetablesPage());
       case '/coupon':
@@ -91,7 +98,7 @@ class MyRoutes {
       case '/my_bag':
         return MaterialPageRoute(builder: (_) => const MyBlogPage());
       case '/my_orders':
-        return MaterialPageRoute(builder: (_) => const MyOrdersPage());
+        return MaterialPageRoute(builder: (_) => MyOrdersPage());
       case '/ongoing':
         return MaterialPageRoute(builder: (_) => const OnGoingPage());
       case '/history':
@@ -113,11 +120,11 @@ class MyRoutes {
         return MaterialPageRoute(
             builder: (_) => const NotificationSettingsPage());
       case '/edit_profile':
-        return MaterialPageRoute(builder: (_) => const EditProfilePage());
+        return MaterialPageRoute(builder: (_) => EditProfilePage());
       case '/change_number':
         return MaterialPageRoute(builder: (_) => const CouponPage());
       case '/account_password':
-        return MaterialPageRoute(builder: (_) => const AccountPasswordPage());
+        return MaterialPageRoute(builder: (_) => AccountPasswordPage());
       case '/my_address':
         return MaterialPageRoute(builder: (_) => const MyAddressPage());
       // case '/select_location':

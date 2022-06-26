@@ -73,7 +73,7 @@ class ResetPasswordView extends StatelessWidget {
                     child: Text(
                       'Reset password',
                       style: MyTextStyleComp.myTextStyle(
-                        color: ColorsConst.colorWhitee,
+                        color: ColorsConst.colorWhite,
                         weight: FontWeight.w500,
                         fontSize: 16,
                       ),

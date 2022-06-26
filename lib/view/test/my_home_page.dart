@@ -4,7 +4,7 @@ import 'package:kunlik/service/api/api_date.dart';
 import 'package:kunlik/view/test/categoriy_page.dart';
 
 class MyHomePage extends StatelessWidget {
-  final List<ApiModels> apiData = [];
+  final List<ApiModel> apiData = [];
   MyHomePage({Key? key}) : super(key: key);
 
   @override
@@ -15,13 +15,13 @@ class MyHomePage extends StatelessWidget {
       ),
       body: FutureBuilder(
           future: ApiService.getData(),
-          builder: (context, AsyncSnapshot<List<ApiModels>> snap) {
+          builder: (context, AsyncSnapshot<List<ApiModel>> snap) {
             if (!snap.hasData) {
               return const Center(child: CircularProgressIndicator.adaptive());
             } else if (snap.hasError) {
               return const Center(child: Text('No Internet'));
             } else {
-              List<ApiModels> data = snap.data!;
+              List<ApiModel> data = snap.data!;
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  ElevatedButton button(context, String categ, List<ApiModels> data) {
+  ElevatedButton button(context, String categ, List<ApiModel> data) {
     return ElevatedButton(
       child: Text(categ),
       onPressed: () {
